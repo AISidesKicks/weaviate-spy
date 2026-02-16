@@ -1,0 +1,22 @@
+services:
+  weaviate-spy:
+    image: aisideskicks-weaviate-spy
+    container_name: AISidesKicks-weaviate-spy
+    command: uvicorn weaviate_spy.main:app --host 0.0.0.0 --port 7777 --reload
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7777:7777"
+    environment:
+      - WEAVIATE_HOST=host.docker.internal
+      - WEAVIATE_PORT=8080
+      - WEAVIATE_SECURE=
+      - WEAVIATE_GRPC_HOST=host.docker.internal
+      - WEAVIATE_GRPC_PORT=50051
+      - WEAVIATE_GRPC_SECURE=
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./weaviate_spy:/app/weaviate_spy
+      # - ./frontend/dist:/app/static # Uncomment this line if you want to use a local frontend build

@@ -1,0 +1,41 @@
+# Frontend build output (built in Docker stage)
+static/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Node modules (if any at root)
+node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Test files
+tests/
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+.kilocode/
+plans/
+dummy/
+screenshot.png

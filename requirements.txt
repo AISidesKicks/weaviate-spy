@@ -1,0 +1,6 @@
+fastapi>=0.128.5
+toolz>=1.1.0
+loguru>=0.7.3
+weaviate-client>=4.19.2
+python-dotenv>=1.0.1
+uvicorn>=0.40.0
